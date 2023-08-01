@@ -1,2 +1,2 @@
 # hyqerion199.github.io
- Making Dumb Websites
+ Making a Website full of dumb stuff
