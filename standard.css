@@ -9,7 +9,10 @@ body{
   }
   
 .mainhead{
-  text-align: center;
+  right: -49px;
+  display: flex;
+  position: relative;
+  justify-content: center;
 }
 
   .headerrow{
@@ -25,4 +28,30 @@ body{
 p{
     text-align: center;
     background-color: #d3d3d3;
+}
+
+.signupelement{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #d3d3d3;
+  display: inline-block;
+  text-align: left;
+  width: max-content;
+  float: right;
+}
+
+.signuplink{
+  padding: 10px 10px 10px 10px;
+  margin: 0;
+  text-align: center;
+  display: block;
+  color: black;
+  text-decoration: none;
+
+}
+
+.signupelement:hover{
+  background-color: rgb(197, 197, 197);
 }
