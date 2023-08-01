@@ -8,12 +8,16 @@ body{
     font-family: Arial, sans-serif;
   }
   
+.mainhead{
+  text-align: center;
+}
+
   .headerrow{
     background-color: #d3d3d3;
     margin: 0;
     padding: 5px 5px 5px 5px;
     color: black;
-    text-align: center;
+    
   }
   
   .navigationlist{
@@ -32,6 +36,7 @@ body{
     float: left;
     display: flex;
     justify-content: center;
+    
   }
   
   .navigationlink{
@@ -47,7 +52,10 @@ body{
   .navigationelement:hover{
     background-color: rgb(197, 197, 197);
   }
-
+  .signupdiv:hover{
+    background-color: rgb(197, 197, 197);
+  }
+  
 
 .navigationcenter{ text-align: center; }
 
@@ -55,6 +63,8 @@ body{
     border-color: #bbbbbb;
     border-top-width: 5px;
     border-bottom-width: 5px;
+    border-left-width: 0px;
+    border-right-width: 0px;
     border-style: solid;
     width: 100%;
 }
