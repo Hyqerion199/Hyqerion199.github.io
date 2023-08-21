@@ -7,7 +7,13 @@
         <link rel="stylesheet" type="text/css" href="../navig.css">
     </head>
     <body>
-        <script type="module" src="./index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            <script>
+                const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
+                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
+                const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+            </script>
+        <script src="./index.js"></script>
         <header class="headerrow"><h1>Signup or Login</h1></header>
         <div class="idk">        
             <div class="navigationcenter">
