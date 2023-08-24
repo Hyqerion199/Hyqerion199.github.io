@@ -13,7 +13,6 @@
                 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
                 const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
             </script>
-        <script src="./index.js"></script>
         <header class="headerrow"><h1>Signup or Login</h1></header>
         <div class="idk">        
             <div class="navigationcenter">
@@ -26,13 +25,19 @@
             </div>
         </div>
         <p class="center">Signup/Login page, not functional yet</p>
-        <center>
+        <center  id="signupform">
             <p>Email:<input name="emailfield" type="text"></br></p>
             <p>Username:<input name="userfield" type="text"></br></p>
-            <p>Password: <input name="pwdfield" type="text"></br>
-            </p>
-            <input name="submit" type="submit" onclick="test();" value="Submit"></br>
+            <p>Password: <input name="pwdfield" type="text"></br></p>
+            <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
+            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');">Switch to Login</button>
+        </center>
+        <center class="hide"  id="loginform">
+            <p>Email:<input name="emailfield" type="text"></br></p>
+            <p>Password: <input name="pwdfield" type="text"></br></p>
+            <input name="submit" type="submit" onclick="login();" value="Login"></br>
+            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');">Switch to Signup</button>
         </center>
     </body>
-    
+    <script src="./index.js"></script>
 </html>
