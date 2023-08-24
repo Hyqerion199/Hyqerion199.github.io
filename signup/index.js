@@ -43,7 +43,7 @@ async function login(){
             email: emailfield[1].value,
             password: pwdfield[1].value,
           })    
-          //window.location.assign("/");
+          window.location.assign("/");
         }
 }
 
