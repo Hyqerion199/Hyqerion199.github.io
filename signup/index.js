@@ -1,23 +1,27 @@
 let emailfield = document.getElementsByName("emailfield");
 let userfield = document.getElementsByName("userfield");
 let pwdfield = document.getElementsByName("pwdfield");
+let namefield = document.getElementsByName("namefield")
 
-function signup(){
-    if (emailfield[0].value == ""){
-        alert("Please enter an email");
-    }
+async function signup(){
     if (userfield[0].value == ""){
         alert("Please enter a Username");
+    }
+    if (namefield[0].value == ""){
+        alert("Please enter an Name/Nickname")
+    }
+    if (emailfield[0].value == ""){
+        alert("Please enter an email");
     }
     if (pwdfield[0].value == ""){
         alert("Please enter a password");
     }
     else {
-    alert(`Your email is '${emailfield[0].value}' your username is '${userfield[0].value}' and your password is '${pwdfield[0].value}'`);
+    alert(`Your email is '${emailfield[0].value}' your username is '${userfield[0].value}' your name/nickname is '${namefield[0].value}' and your password is '${pwdfield[0].value}' `);
     }
 }
 
-function login(){
+async function login(){
     if (emailfield[0].value == ""){
         alert("Please enter an email");
     }

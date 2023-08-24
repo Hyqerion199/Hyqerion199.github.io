@@ -27,17 +27,18 @@
         </div>
         <p class="center">Signup/Login page, not functional yet</p>
         <center  id="signupform">
-            <p>Email:<input name="emailfield" type="text"></br></p>
+            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Switch to Login</button>
             <p>Username:<input name="userfield" type="text"></br></p>
+            <p>Name/Nickname:<input name="namefield" type="text"></br></p>
+            <p>Email:<input name="emailfield" type="text"></br></p>
             <p>Password: <input name="pwdfield" type="text"></br></p>
             <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
-            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Switch to Login</button>
         </center>
         <center id="loginform">
+            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Switch to Signup</button>
             <p>Email:<input name="emailfield" type="text"></br></p>
             <p>Password: <input name="pwdfield" type="text"></br></p>
             <input name="submit" type="submit" onclick="login();" value="Login"></br>
-            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Switch to Signup</button>
         </center>
     </body>
     <script src="./index.js"></script>
