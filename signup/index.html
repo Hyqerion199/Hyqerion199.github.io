@@ -2,7 +2,7 @@
     
     <head>
         <meta charset="utf-8">
-        <title>Signup/Login</title>
+        <title id="TitleElement">Signup/Login</title>
         <link rel="stylesheet" type="text/css" href="standard.css">
         <link rel="stylesheet" type="text/css" href="../navig.css">
     </head>
@@ -31,13 +31,13 @@
             <p>Username:<input name="userfield" type="text"></br></p>
             <p>Password: <input name="pwdfield" type="text"></br></p>
             <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
-            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');">Switch to Login</button>
+            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Switch to Login</button>
         </center>
         <center id="loginform">
             <p>Email:<input name="emailfield" type="text"></br></p>
             <p>Password: <input name="pwdfield" type="text"></br></p>
             <input name="submit" type="submit" onclick="login();" value="Login"></br>
-            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');">Switch to Signup</button>
+            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Switch to Signup</button>
         </center>
     </body>
     <script src="./index.js"></script>

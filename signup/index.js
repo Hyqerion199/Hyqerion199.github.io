@@ -30,19 +30,17 @@ function login(){
 }
 
 function switchhidden(page){
-    if (page == "signup"){
+    if (page == "signup"){ //switches to Login page
         document.getElementById("loginform").classList.toggle('hide');
         document.getElementById("loginheader").classList.toggle('hide');
         document.getElementById("signupform").classList.toggle('hide');
         document.getElementById("signupheader").classList.toggle('hide');
-        
     }
-    if (page == "login"){
+    if (page == "login"){ //switches to Signup page
         document.getElementById("loginform").classList.toggle('hide');
         document.getElementById("loginheader").classList.toggle('hide');
         document.getElementById("signupform").classList.toggle('hide');
         document.getElementById("signupheader").classList.toggle('hide');
-        
     }
 }
 
@@ -53,8 +51,10 @@ if (localStorage.getItem('typeofpage') == null){
 if (localStorage.getItem('typeofpage') == 'login'){
     document.getElementById("signupform").classList.add('hide');
     document.getElementById("signupheader").classList.add('hide');
+    document.getElementById("TitleElement").innerHTML = "Login";
 }
 if (localStorage.getItem('typeofpage') == 'signup'){
     document.getElementById("loginform").classList.add('hide');
     document.getElementById("loginheader").classList.add('hide');
+    document.getElementById("TitleElement").innerHTML = "Signup";
 }
