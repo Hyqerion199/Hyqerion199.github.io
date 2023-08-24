@@ -7,30 +7,44 @@ async function signup(){
     if (userfield[0].value == ""){
         alert("Please enter a Username");
     }
-    if (namefield[0].value == ""){
+    else if (namefield[0].value == ""){
         alert("Please enter an Name/Nickname")
     }
-    if (emailfield[0].value == ""){
+    else if (emailfield[0].value == ""){
         alert("Please enter an email");
     }
-    if (pwdfield[0].value == ""){
+    else if (pwdfield[0].value == ""){
         alert("Please enter a password");
     }
     else {
-    alert(`Your email is '${emailfield[0].value}' your username is '${userfield[0].value}' your name/nickname is '${namefield[0].value}' and your password is '${pwdfield[0].value}' `);
+    const { data, error } = await _supabase.auth.signUp({
+        email: emailfield[0].value,
+        password: pwdfield[0].value,
+        options: {
+            data: {
+                username: userfield[0].value,
+                name: namefield[0].value
+            }
+        }
+    })
+    window.location.assign("/");
     }
 }
 
 async function login(){
-    if (emailfield[0].value == ""){
+    if (emailfield[1].value == ""){
         alert("Please enter an email");
     }
-    if (pwdfield[0].value == ""){
+    else if (pwdfield[1].value == ""){
         alert("Please enter a password");
     }
     else {
-    alert(`Your email is '${emailfield[0].value}' and your password is '${pwdfield[0].value}'`);
-    }
+        const { data, error } = await _supabase.auth.signInWithPassword({
+            email: emailfield[1].value,
+            password: pwdfield[1].value,
+          })    
+          //window.location.assign("/");
+        }
 }
 
 function switchhidden(page){

@@ -6,10 +6,17 @@
         <link rel="stylesheet" type="text/css" href="navig.css">
     </head>
     <body>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script>
+            const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
+            const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
+            const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+        </script>
         <header class="headerrow">
-            <div class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');" ><p class="signuplink">Signup</p></div>
-            <div class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');" ><p class="signuplink">Login</p></div>
-            <h1 class="mainhead">Welcome to the Home of Dumb Projects I Make</h1>
+            <div id="signupbutton" class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');" ><p class="signuplink">Signup</p></div>
+            <div id="loginbutton" class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');" ><p class="signuplink">Login</p></div>
+            <div id="logoutbutton" class="signupelement hide" onclick="logout()" ><p class="signuplink">Logout</p></div>
+            <h1 id="mainhead" class="mainhead">Welcome to the Home of Dumb Projects I Make</h1>
             
         </header>
         
@@ -26,6 +33,6 @@
         </div>
 
         <p>This is a dumb wesite im making</p>
-        
+        <script src="index.js"></script>
     </body>
 </html>

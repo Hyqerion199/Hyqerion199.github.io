@@ -23,9 +23,7 @@ body{
     text-align: center;
   }
 
-  .hide{
-    display: none;
-  }
+
 
   input[type=text]{
     padding: 0;
