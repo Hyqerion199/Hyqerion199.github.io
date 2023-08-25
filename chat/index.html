@@ -38,14 +38,31 @@
             </ul>
         </div>
     </div>
-    <div>
-        <table id="messages">
-
-        </table>
+    <div class="chat-container">
+        <div class="message user-message">
+            <div class="meta-data">
+                You - 2023-08-25 14:30
+            </div>
+            Hello! How can I help you today?
+        </div>
+        <div class="message">
+            <div class="meta-data">
+                Customer - 2023-08-25 14:35
+            </div>
+            Hi there! I have a question about your products.
+        </div>
+        <div class="message user-message">
+            <div class="meta-data">
+                You - 2023-08-25 14:38
+            </div>
+            Sure, feel free to ask. I'm here to assist you.
+        </div>
     </div>
     <div class="messagebox center">
         <textarea id="messagearea" placeholder="Enter message..."></textarea>
-        <input id="messagebutton" type="submit" value="Send">
+        <div class="submit-container">
+            <input id="messagebutton" type="submit" value="Send">
+        </div>
     </div>
     <script src="index.js"></script>
 </body>
