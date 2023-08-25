@@ -16,6 +16,6 @@ async function newload(){
        document.getElementById("mainhead").style.left = "56px";
        console.log(data)
     }
-   }
+}
    
-   newload();
+newload();
