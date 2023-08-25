@@ -27,7 +27,7 @@
         </div>
         <p id="alert" class="hide alert"></p>
         <center  id="signupform">
-            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Switch to Login</button>
+            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Login Instead</button>
             <p>Username:<input name="userfield" type="text"></br></p>
             <p>Name/Nickname:<input name="namefield" type="text"></br></p>
             <p>Email:<input name="emailfield" type="email"></br></p>
@@ -35,7 +35,7 @@
             <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
         </center>
         <center id="loginform">
-            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Switch to Signup</button>
+            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Signup Instead</button>
             <p>Email:<input name="emailfield" type="email"></br></p>
             <p>Password: <input name="pwdfield" type="password"></br></p>
             <input name="submit" type="submit" onclick="login();" value="Login"></br>
