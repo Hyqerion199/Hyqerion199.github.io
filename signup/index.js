@@ -2,21 +2,39 @@ let emailfield = document.getElementsByName("emailfield");
 let userfield = document.getElementsByName("userfield");
 let pwdfield = document.getElementsByName("pwdfield");
 let namefield = document.getElementsByName("namefield")
+let alertid = document.getElementById("alert");
+
+let alertmessage = ["Please enter a Username.", "Please enter an Name/Nickname.", "Please enter an email.", "Please enter a password.", "Please enter a valid email.", "Please enter a password with at least 8 characters."];
 
 async function signup(){
+    emailstring = emailfield[0].value;
+    pwdstring = pwdfield[0].value;
     if (userfield[0].value == ""){
-        alert("Please enter a Username");
+        alertid.innerHTML = alertmessage[0];
+        alertid.classList.remove('hide');
     }
     else if (namefield[0].value == ""){
-        alert("Please enter an Name/Nickname")
+        alertid.innerHTML = alertmessage[1];
+        alertid.classList.remove('hide');
     }
     else if (emailfield[0].value == ""){
-        alert("Please enter an email");
+        alertid.innerHTML = alertmessage[2];
+        alertid.classList.remove('hide');
     }
     else if (pwdfield[0].value == ""){
-        alert("Please enter a password");
+        alertid.innerHTML = alertmessage[3];
+        alertid.classList.remove('hide');
+    }
+    else if (emailstring.indexOf("@") == -1 || emailstring.indexOf(".") == -1){
+        alertid.innerHTML = alertmessage[4];
+        alertid.classList.remove('hide');
+    }
+    else if (pwdstring.length < 8){
+        alertid.innerHTML = alertmessage[5];
+        alertid.classList.remove('hide');
     }
     else {
+    alertid.classList.add('hide');
     const { data, error } = await _supabase.auth.signUp({
         email: emailfield[0].value,
         password: pwdfield[0].value,
@@ -27,18 +45,31 @@ async function signup(){
             }
         }
     })
-    window.location.assign("/");
+    //window.location.assign("/");
     }
 }
 
 async function login(){
+    emailstring = emailfield[0].value;
+    pwdstring = pwdfield[0].value;
     if (emailfield[1].value == ""){
-        alert("Please enter an email");
+        alertid.innerHTML = alertmessage[2];
+        alertid.classList.remove('hide');
     }
     else if (pwdfield[1].value == ""){
-        alert("Please enter a password");
+        alertid.innerHTML = alertmessage[3];
+        alertid.classList.remove('hide');
+    }
+    else if (emailstring.indexOf("@") == -1 || emailstring.indexOf(".") == -1){
+        alertid.innerHTML = alertmessage[4];
+        alertid.classList.remove('hide');
+    }
+    else if (pwdstring.length < 8){
+        alertid.innerHTML = alertmessage[5];
+        alertid.classList.remove('hide');
     }
     else {
+        alertid.classList.add('hide');
         const { data, error } = await _supabase.auth.signInWithPassword({
             email: emailfield[1].value,
             password: pwdfield[1].value,
