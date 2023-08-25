@@ -50,8 +50,8 @@ async function signup(){
 }
 
 async function login(){
-    emailstring = emailfield[0].value;
-    pwdstring = pwdfield[0].value;
+    emailstring = emailfield[1].value;
+    pwdstring = pwdfield[1].value;
     if (emailfield[1].value == ""){
         alertid.innerHTML = alertmessage[2];
         alertid.classList.remove('hide');
@@ -60,7 +60,7 @@ async function login(){
         alertid.innerHTML = alertmessage[3];
         alertid.classList.remove('hide');
     }
-    else if (emailstring.indexOf("@") == -1){
+    else if (emailstring.indexOf("@") == -1 || emailstring.indexOf(".") == -1){
         alertid.innerHTML = alertmessage[4];
         alertid.classList.remove('hide');
     }
