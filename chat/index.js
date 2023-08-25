@@ -12,7 +12,7 @@ async function newload(){
        document.getElementById("signupbutton").classList.add('hide');
        document.getElementById("loginbutton").classList.add('hide');
        document.getElementById("logoutbutton").classList.remove('hide');
-
+       document.getElementById("messagebox").classList.remove('hide');
        document.getElementById("mainhead").style.left = "56px";
        console.log(data)
     }
