@@ -1,45 +1,55 @@
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title id="TitleElement">Signup/Login</title>
-        <link rel="stylesheet" type="text/css" href="standard.css">
-        <link rel="stylesheet" type="text/css" href="../navig.css">
-    </head>
-    <body>
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-            <script>
-                const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
-                const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
-                const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
-            </script>
-        <header id="signupheader" class="headerrow"><h1>Signup</h1></header>
-        <header id="loginheader" class="headerrow"><h1>Login</h1></header>
-        <div class="idk">        
-            <div class="navigationcenter">
-                <ul class="navigationlist">
-                    <li class="navigationelement"><a class="navigationlink" href="../">Home</a></li>
-                    <li class="navigationelement"><a class="navigationlink" href="../chat/">Chat</a></li>
-                    <li class="navigationelement"><a class="navigationlink" href="../news/">News</a></li>
-                    <li class="navigationelement"><a class="navigationlink" href="../about/">About</a></li>
-                </ul>
-            </div>
+
+<head>
+    <meta charset="utf-8">
+    <title id="TitleElement">Signup/Login</title>
+    <link rel="stylesheet" type="text/css" href="standard.css">
+    <link rel="stylesheet" type="text/css" href="../navig.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
+        const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+    </script>
+    <header id="signupheader" class="headerrow">
+        <h1>Signup</h1>
+    </header>
+    <header id="loginheader" class="headerrow">
+        <h1>Login</h1>
+    </header>
+    <div class="idk">
+        <div class="navigationcenter">
+            <ul class="navigationlist">
+                <li class="navigationelement"><a class="navigationlink" href="../">Home</a></li>
+                <li class="navigationelement"><a class="navigationlink" href="../chat/">Chat</a></li>
+                <li class="navigationelement"><a class="navigationlink" href="../news/">News</a></li>
+                <li class="navigationelement"><a class="navigationlink" href="../about/">About</a></li>
+            </ul>
         </div>
-        <p id="alert" class="hide alert"></p>
-        <center  id="signupform">
-            <button onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Login Instead</button>
-            <p>Username:<input name="userfield" type="text"></br></p>
-            <p>Name/Nickname:<input name="namefield" type="text"></br></p>
-            <p>Email:<input name="emailfield" type="email"></br></p>
-            <p>Password: <input name="pwdfield" type="password"></br></p>
-            <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
-        </center>
-        <center id="loginform">
-            <button onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Signup Instead</button>
-            <p>Email:<input name="emailfield" type="email"></br></p>
-            <p>Password: <input name="pwdfield" type="password"></br></p>
-            <input name="submit" type="submit" onclick="login();" value="Login"></br>
-        </center>
-    </body>
-    <script src="./index.js"></script>
+    </div>
+    <p id="alert" class="hide alert"></p>
+    <center id="signupform">
+        <button
+            onclick="switchhidden('login'); localStorage.setItem('typeofpage', 'login');document.getElementById('TitleElement').innerHTML = 'Login';">Login
+            Instead</button>
+        <p>Username:<input name="userfield" type="text"></br></p>
+        <p>Name/Nickname:<input name="namefield" type="text"></br></p>
+        <p>Email:<input name="emailfield" type="email"></br></p>
+        <p>Password: <input name="pwdfield" type="password"></br></p>
+        <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
+    </center>
+    <center id="loginform">
+        <button
+            onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Signup
+            Instead</button>
+        <p>Email:<input name="emailfield" type="email"></br></p>
+        <p>Password: <input name="pwdfield" type="password"></br></p>
+        <input name="submit" type="submit" onclick="login();" value="Login"></br>
+    </center>
+</body>
+<script src="./index.js"></script>
+
 </html>
