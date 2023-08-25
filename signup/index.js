@@ -60,7 +60,7 @@ async function login(){
         alertid.innerHTML = alertmessage[3];
         alertid.classList.remove('hide');
     }
-    else if (emailstring.indexOf("@") == -1 || emailstring.indexOf(".") == -1){
+    else if (emailstring.indexOf("@") == -1){
         alertid.innerHTML = alertmessage[4];
         alertid.classList.remove('hide');
     }
