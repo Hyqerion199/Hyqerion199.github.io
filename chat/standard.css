@@ -78,7 +78,7 @@ input[type=submit]:hover {
 
 .meta-data {
   font-size: 12px;
-  color: #777;
+  color: #b7b7b7;
   text-align: right;
 }
 
@@ -90,7 +90,7 @@ input[type=submit]:hover {
 }
 
 .user-message {
-  background-color: #0099ff;
+  background-color: green;
   color: #fff;
   text-align: right;
 }
