@@ -14,6 +14,8 @@ async function newload(){
        document.getElementById("logoutbutton").classList.remove('hide');
        document.getElementById("messagebox").classList.remove('hide');
        document.getElementById("mainhead").style.left = "56px";
+       document.getElementById("chat-container").style.height = "75%";
+       document.getElementById("chat-container").style.zIndex = "1";
        console.log(data)
     }
 }
