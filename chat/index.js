@@ -32,19 +32,29 @@ async function newload(){
 
 
 async function test(){
-    const { data, error } = await _supabase.auth.getSession()
+     if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
+        const { data, error } = await _supabase.auth.getSession()
     let nameofuser = data['session']['user']['user_metadata']['name']
+}
     const { data: data1, error: error1 } = await _supabase.from('chat').select()
     data1.reverse();
 
     data1.forEach(element => {
-        if (element.name == nameofuser){
-            chatcontainer.insertAdjacentHTML("beforeend", `<div class="message user-message"><div class="meta-data"></div></div>`);
-            let metadata = document.getElementsByClassName("meta-data");
-            metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
-            let message = document.getElementsByClassName("message");
-            message[message.length-1].insertAdjacentText("beforeend", `${element.message}`);
-        } else {
+        if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
+            if (element.name == nameofuser){
+                chatcontainer.insertAdjacentHTML("beforeend", `<div class="message user-message"><div class="meta-data"></div></div>`);
+                let metadata = document.getElementsByClassName("meta-data");
+                metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+                let message = document.getElementsByClassName("message");
+                message[message.length-1].insertAdjacentText("beforeend", `${element.message}`);
+            } else {
+                chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
+                let metadata = document.getElementsByClassName("meta-data");
+                metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+                let message = document.getElementsByClassName("message");
+                message[message.length-1].insertAdjacentText("beforeend", `${element.message}`);
+            }
+        }else {
             chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
             let metadata = document.getElementsByClassName("meta-data");
             metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
