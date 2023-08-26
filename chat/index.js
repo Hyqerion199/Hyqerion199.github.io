@@ -52,8 +52,6 @@ x = setInterval(async function test() {
     if (chatttttt[0]['created_at'] != data3[0]['created_at']) {
         {
 
-            console.log(data3[0]['created_at'])
-            console.log(chatttttt[0]['created_at'])
             if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
 
             }
@@ -94,4 +92,4 @@ x = setInterval(async function test() {
         }
 
     }
-}, 5000);
+}, 1000);
