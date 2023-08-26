@@ -51,7 +51,7 @@ x = setInterval(async function test() {
     data3.reverse();
     if (chatttttt[0]['created_at'] != data3[0]['created_at']) {
         {
-            chatcontainer.innerHTML = "";
+
             console.log(data3[0]['created_at'])
             console.log(chatttttt[0]['created_at'])
             if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
@@ -60,26 +60,28 @@ x = setInterval(async function test() {
             const { data: data1, error: error1 } = await _supabase.from('chat').select()
             data1.reverse();
             chatttttt = data1
+            chatcontainer.innerHTML = "";
             data1.forEach(element => {
                 if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
-                    async function ihatethis(){
+                    async function ihatethis() {
                         const { data, error } = await _supabase.auth.getSession()
                         let nameofuser = data['session']['user']['user_metadata']['name']
+                        if (element.name == nameofuser) {
+                            chatcontainer.insertAdjacentHTML("beforeend", `<div class="message user-message"><div class="meta-data"></div></div>`);
+                            let metadata = document.getElementsByClassName("meta-data");
+                            metadata[metadata.length - 1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+                            let message = document.getElementsByClassName("message");
+                            message[message.length - 1].insertAdjacentText("beforeend", `${element.message}`);
+                        } else {
+                            chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
+                            let metadata = document.getElementsByClassName("meta-data");
+                            metadata[metadata.length - 1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+                            let message = document.getElementsByClassName("message");
+                            message[message.length - 1].insertAdjacentText("beforeend", `${element.message}`);
+                        }
                     }
                     ihatethis();
-                    if (element.name == nameofuser) {
-                        chatcontainer.insertAdjacentHTML("beforeend", `<div class="message user-message"><div class="meta-data"></div></div>`);
-                        let metadata = document.getElementsByClassName("meta-data");
-                        metadata[metadata.length - 1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
-                        let message = document.getElementsByClassName("message");
-                        message[message.length - 1].insertAdjacentText("beforeend", `${element.message}`);
-                    } else {
-                        chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
-                        let metadata = document.getElementsByClassName("meta-data");
-                        metadata[metadata.length - 1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
-                        let message = document.getElementsByClassName("message");
-                        message[message.length - 1].insertAdjacentText("beforeend", `${element.message}`);
-                    }
+
                 } else {
                     chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
                     let metadata = document.getElementsByClassName("meta-data");
@@ -92,4 +94,4 @@ x = setInterval(async function test() {
         }
 
     }
-}, 1000);
+}, 5000);
