@@ -1,5 +1,5 @@
 const messagebut = document.getElementById('messagearea')
-
+const chatcontainer = document.getElementById('chat-container')
 
 
 async function logout(){
@@ -29,19 +29,38 @@ async function newload(){
 }
    
 
+
+
 async function test(){
-    const { data, error } = await _supabase.from('chat').select()
-    console.log(data);
+    const { data, error } = await _supabase.auth.getSession()
+    let nameofuser = data['session']['user']['user_metadata']['name']
+    const { data: data1, error: error1 } = await _supabase.from('chat').select()
+    data1.reverse();
+
+    data1.forEach(element => {
+        if (element.name == nameofuser){
+            chatcontainer.insertAdjacentHTML("beforeend", `<div class="message user-message"><div class="meta-data"></div></div>`);
+            let metadata = document.getElementsByClassName("meta-data");
+            metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+            let message = document.getElementsByClassName("message");
+            message[message.length-1].insertAdjacentText("beforeend", `${element.message}`);
+        } else {
+            chatcontainer.insertAdjacentHTML("beforeend", `<div class="message"><div class="meta-data"></div></div>`);
+            let metadata = document.getElementsByClassName("meta-data");
+            metadata[metadata.length-1].insertAdjacentText("beforeend", `${element.name} - ${element.created_at}`);
+            let message = document.getElementsByClassName("message");
+            message[message.length-1].insertAdjacentText("beforeend", `${element.message}`);
+        }
+
+    });
 }
 
 
 async function sendmessage(){
     if (messagebut.value != ""){
     const { data, error } = await _supabase.auth.getSession()
-    console.log(data['session']['user']['user_metadata']['name']);
     const { data :data1, error: error1 } = await _supabase.from('chat').insert([{message: messagebut.value, name: data['session']['user']['user_metadata']['name']}])
     messagebut.value = "";
-    console.log(data1);
     }
 }
 
