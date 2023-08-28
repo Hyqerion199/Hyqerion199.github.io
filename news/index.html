@@ -15,7 +15,18 @@
 
 <body>
     <header class="headerrow">
-        <h1>News</h1>
+        <div id="signupbutton" class="signupelement"
+            onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'news');">
+            <p class="signuplink">Signup</p>
+        </div>
+        <div id="loginbutton" class="signupelement"
+            onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'news');">
+            <p class="signuplink">Login</p>
+        </div>
+        <div id="logoutbutton" class="signupelement hide" onclick="logout()">
+            <p class="signuplink">Logout</p>
+        </div>
+        <h1 id="mainhead" class="mainhead">News</h1>
     </header>
     <div class="idk">
         <div class="navigationcenter">
@@ -28,6 +39,8 @@
         </div>
     </div>
     <p>News page, haven't started this yet</p>
+    <script src="../repeated.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

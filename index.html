@@ -17,11 +17,11 @@
     </script>
     <header class="headerrow">
         <div id="signupbutton" class="signupelement"
-            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');">
+            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'main');">
             <p class="signuplink">Signup</p>
         </div>
         <div id="loginbutton" class="signupelement"
-            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');">
+            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'main');">
             <p class="signuplink">Login</p>
         </div>
         <div id="logoutbutton" class="signupelement hide" onclick="logout()">
@@ -41,7 +41,8 @@
     </div>
 
     <p>This is a dumb website im making</p>
-    <script src="index.js"></script>
+    <script src="repeated.jss"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

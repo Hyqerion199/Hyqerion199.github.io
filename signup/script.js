@@ -74,7 +74,22 @@ async function login() {
             email: emailfield[1].value,
             password: pwdfield[1].value,
         })
-        window.location.assign("/");
+        if (localStorage.getItem('redirectpage') == 'main') {
+            localStorage.setItem('redirectpage', '');
+            window.location.assign("../");
+        } else if (localStorage.getItem('redirectpage') == 'chat') {
+            localStorage.setItem('redirectpage', '');
+            window.location.assign("../chat");
+        } else if (localStorage.getItem('redirectpage') == 'news') {
+            localStorage.setItem('redirectpage', '');
+            window.location.assign("../news");
+        } else if (localStorage.getItem('redirectpage') == 'about') {
+            localStorage.setItem('redirectpage', '');
+            window.location.assign("../about");
+        } else {
+            window.location.assign("../");
+        }
+        
     }
 }
 
