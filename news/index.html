@@ -12,17 +12,18 @@
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
     </script>
 </head>
-
 <body>
     <header class="headerrow">
         <div id="signupbutton" class="signupelement"
             onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'news');">
             <p class="signuplink">Signup</p>
         </div>
+
         <div id="loginbutton" class="signupelement"
             onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'news');">
             <p class="signuplink">Login</p>
         </div>
+        
         <div id="logoutbutton" class="signupelement hide" onclick="logout()">
             <p class="signuplink">Logout</p>
         </div>

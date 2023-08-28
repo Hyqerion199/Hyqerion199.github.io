@@ -19,10 +19,12 @@
             onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'chat');">
             <p class="signuplink">Signup</p>
         </div>
+        
         <div id="loginbutton" class="signupelement"
             onclick="window.location.href='../signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'chat');">
             <p class="signuplink">Login</p>
         </div>
+
         <div id="logoutbutton" class="hide signupelement" onclick="logout()">
             <p class="signuplink">Logout</p>
         </div>
@@ -38,10 +40,7 @@
             </ul>
         </div>
     </div>
-    <div id="chat-container" class="chat-container">
-
-
-    </div>
+    <div id="chat-container" class="chat-container"></div>
     <div id="messagebox" class="hide messagebox">
         <textarea id="messagearea" placeholder="Enter message..."></textarea>
         <div class="submit-container">
@@ -50,5 +49,4 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>

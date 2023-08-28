@@ -4,7 +4,6 @@ async function logout() {
 
 }
 
-
 async function newload() {
 
     if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {

@@ -5,28 +5,30 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="navig.css">
     <link rel="stylesheet" type="text/css" href="standard.css">
-    
 </head>
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
         const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
     </script>
+
     <header class="headerrow">
-        <div id="signupbutton" class="signupelement"
-            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'main');">
+        <div id="signupbutton" class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'signup');localStorage.setItem('redirectpage', 'main');">
             <p class="signuplink">Signup</p>
         </div>
-        <div id="loginbutton" class="signupelement"
-            onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'main');">
+
+        <div id="loginbutton" class="signupelement" onclick="window.location.href='signup/';localStorage.setItem('typeofpage', 'login');localStorage.setItem('redirectpage', 'main');">
             <p class="signuplink">Login</p>
         </div>
+
         <div id="logoutbutton" class="signupelement hide" onclick="logout()">
             <p class="signuplink">Logout</p>
         </div>
+
         <h1 id="mainhead" class="mainhead">Welcome to the Home of Dumb Projects I Make</h1>
     </header>
     <div class="idk">
@@ -39,10 +41,8 @@
             </ul>
         </div>
     </div>
-
     <p>This is a dumb website im making</p>
     <script src="repeated.jss"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
