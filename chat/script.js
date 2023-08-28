@@ -21,11 +21,6 @@ async function newload() {
         document.getElementById("chat-container").style.height = "75%";
         document.getElementById("chat-container").style.zIndex = "1";
     }
-
-
-
-
-
 }
 
 
@@ -96,4 +91,4 @@ x = setInterval(async function test() {
         }
 
     }
-}, 1000);
+}, 500);
