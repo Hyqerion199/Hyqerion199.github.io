@@ -1,5 +1,3 @@
-
-
 .center {
   text-align: center;
 }
@@ -54,8 +52,6 @@ input[type=submit] {
 }
 
 .submit-container {
-  /*margin-top: -52px;  Adjust this value to move the submit button up or down 
-  margin-left:950px;*/
   width: max-content;
   bottom: 43%;
   left: 75%;
@@ -94,6 +90,3 @@ input[type=submit]:hover {
   color: #fff;
   text-align: right;
 }
-
-
-

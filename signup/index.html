@@ -9,17 +9,21 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script>
         const supabaseUrl = 'https://nehibeqlnydjxvhpcfml.supabase.co'
         const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5laGliZXFsbnlkanh2aHBjZm1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTA4MjI5MTEsImV4cCI6MjAwNjM5ODkxMX0.vGZqm7G6cvJXGMu9hvDXqWf8IJ8Sh3bSuufb4WhXlxU'
         const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
     </script>
+
     <header id="signupheader" class="headerrow">
         <h1>Signup</h1>
     </header>
+
     <header id="loginheader" class="headerrow">
         <h1>Login</h1>
     </header>
+
     <div class="idk">
         <div class="navigationcenter">
             <ul class="navigationlist">
@@ -41,6 +45,7 @@
         <p>Password: <input name="pwdfield" type="password"></br></p>
         <input name="submit" type="submit" onclick="signup();" value="Signup"></br>
     </center>
+
     <center id="loginform">
         <button
             onclick="switchhidden('signup'); localStorage.setItem('typeofpage', 'signup');document.getElementById('TitleElement').innerHTML = 'Signup';">Signup
@@ -49,7 +54,6 @@
         <p>Password: <input name="pwdfield" type="password"></br></p>
         <input name="submit" type="submit" onclick="login();" value="Login"></br>
     </center>
+    <script src="script.js"></script>
 </body>
-<script src="./index.js"></script>
-
 </html>

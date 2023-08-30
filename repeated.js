@@ -1,6 +1,6 @@
 async function logout() {
     await _supabase.auth.signOut();
-    window.location.assign("/");
+    window.location.assign("./");
 
 }
 
@@ -14,6 +14,7 @@ async function newload() {
         document.getElementById("mainhead").style.left = "56px";
         console.log(data)
     }
+
 }
 
 newload();

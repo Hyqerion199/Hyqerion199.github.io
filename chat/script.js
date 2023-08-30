@@ -1,13 +1,11 @@
 const messagebut = document.getElementById('messagearea')
 const chatcontainer = document.getElementById('chat-container')
 
-
 async function logout() {
     await _supabase.auth.signOut();
     window.location.assign("/");
 
 }
-
 
 async function newload() {
 
@@ -21,18 +19,9 @@ async function newload() {
         document.getElementById("chat-container").style.height = "75%";
         document.getElementById("chat-container").style.zIndex = "1";
     }
-
-
-
-
-
 }
 
-
-
-
-
-
+newload();
 
 async function sendmessage() {
     if (messagebut.value != "") {
@@ -44,17 +33,10 @@ async function sendmessage() {
 
 let chatttttt = [{ 'created_at': 'shitsucks' }];
 
-newload();
-
 x = setInterval(async function test() {
     const { data: data3, error: error3 } = await _supabase.from('chat').select()
     data3.reverse();
     if (chatttttt[0]['created_at'] != data3[0]['created_at']) {
-        {
-
-            if (localStorage.getItem('sb-nehibeqlnydjxvhpcfml-auth-token')) {
-
-            }
             const { data: data1, error: error1 } = await _supabase.from('chat').select()
             data1.reverse();
             chatttttt = data1
@@ -93,7 +75,5 @@ x = setInterval(async function test() {
                 }
                 chatttttt = data1
             });
-        }
-
     }
-}, 1000);
+}, 500);
