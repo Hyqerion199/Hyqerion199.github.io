@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Custom button styling */
+        .news-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #e0e0e0;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* News item styling */
+        .news-item {
+            display: none;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style for active news content */
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Latest News</h1>
+
+        <!-- Buttons for each news item -->
+        <button class="news-button" onclick="toggleNews(1)">News 1</button>
+        <div class="news-item" id="news1">
+            <h2>News 1</h2>
+            <p>This is the content of News 1.</p>
+        </div>
+
+        <button class="news-button" onclick="toggleNews(2)">News 2</button>
+        <div class="news-item" id="news2">
+            <h2>News 2</h2>
+            <p>This is the content of News 2.</p>
+        </div>
+
+        <button class="news-button" onclick="toggleNews(3)">News 3</button>
+        <div class="news-item" id="news3">
+            <h2>News 3</h2>
+            <p>This is the content of News 3.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleNews(newsId) {
+            var newsItem = document.getElementById('news' + newsId);
+            if (newsItem.style.display === 'block') {
+                newsItem.style.display = 'none';
+            } else {
+                newsItem.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
